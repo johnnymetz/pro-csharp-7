@@ -79,6 +79,8 @@ namespace ValueAndReferenceTypes
         public string InfoString;
         public ShapeInfo(string info)
         { InfoString = info; }
+
+        public ShapeInfo(){ }
     }
 
     struct Rectangle
@@ -94,6 +96,9 @@ namespace ValueAndReferenceTypes
             RectTop = top; RectBottom = bottom;
             RectLeft = left; RectRight = right;
         }
+
+        // Error: value types (e.g. struct) cannot have zero-parameter constructors
+        //public Rectangle() { }
 
         public void Display()
         {
@@ -116,6 +121,14 @@ namespace ValueAndReferenceTypes
             Console.WriteLine();
 
             ValueTypeContainingRefType();
+
+            ShapeInfo myShape = new ShapeInfo("Hello shape");
+            ShapeInfo myShape2 = new ShapeInfo();
+            Console.WriteLine(myShape.InfoString);
+            Console.WriteLine("{0} is empty", myShape2.InfoString);
+            Rectangle myRect = new Rectangle();
+            Console.WriteLine(myRect.RectTop);
+
             Console.ReadLine();
         }
 
@@ -155,6 +168,12 @@ namespace ValueAndReferenceTypes
             // Change p1.X and print again.
             p1.X = 100;
             Console.WriteLine("\n=> Changed p1.X\n");
+            p1.Display();
+            p2.Display();
+
+            // Change p2.Y and print again.
+            p2.Y = 34;
+            Console.WriteLine("\n=> Changed p2.Y\n");
             p1.Display();
             p2.Display();
         }

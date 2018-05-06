@@ -23,11 +23,15 @@ namespace ImplicitlyTypedLocalVars
             var myInt = 0;
             var myBool = true;
             var myString = "Time, marches on...";
+            var myFloat = 21.1;
+            var myFloat2 = 21.1f;
 
             // Print out the underlying type.
             Console.WriteLine("myInt is a: {0}", myInt.GetType().Name);
             Console.WriteLine("myBool is a: {0}", myBool.GetType().Name);
             Console.WriteLine("myString is a: {0}", myString.GetType().Name);
+            Console.WriteLine("myFloat is a: {0}", myFloat.GetType().Name);
+            Console.WriteLine("myFloat2 is a: {0}", myFloat2.GetType().Name);
         }
 
         static int GetAnInt()

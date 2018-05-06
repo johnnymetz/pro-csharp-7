@@ -10,11 +10,11 @@ namespace FunWithArrays
         static void Main(string[] args)
         {
             Console.WriteLine("***** Fun with Arrays *****\n");
-            SimpleArrays();
-            ArrayInitialization();
-            DeclareImplicitArrays();
-            ArrayOfObjects();
-            RectMultidimensionalArray();
+            //SimpleArrays();
+            //ArrayInitialization();
+            //DeclareImplicitArrays();
+            //ArrayOfObjects();
+            //RectMultidimensionalArray();
 
             JaggedMultidimensionalArray();
             PassAndReceiveArrays();
@@ -86,11 +86,13 @@ namespace FunWithArrays
             Console.WriteLine("=> Array of Objects.");
 
             // An array of objects can be anything at all.
-            object[] myObjects = new object[4];
-            myObjects[0] = 10;
-            myObjects[1] = false;
-            myObjects[2] = new DateTime(1969, 3, 24);
-            myObjects[3] = "Form & Void";
+            //object[] myObjects = new object[4];
+            //myObjects[0] = 10;
+            //myObjects[1] = false;
+            //myObjects[2] = new DateTime(1969, 3, 24);
+            //myObjects[3] = "Form & Void";
+            object[] myObjects = { 10, false, new DateTime(1969, 3, 24), "Form & Void" };
+
 
             foreach (object obj in myObjects)
             {

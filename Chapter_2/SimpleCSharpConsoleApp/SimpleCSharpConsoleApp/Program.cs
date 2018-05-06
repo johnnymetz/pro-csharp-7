@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SimpleCSharpConsoleApp
@@ -12,8 +8,8 @@ namespace SimpleCSharpConsoleApp
         static void Main(string[] args)
         {
             // Set up Console UI (CUI)
-            Console.Title = "My Rocking App";
-            Console.ForegroundColor = ConsoleColor.Yellow;
+            System.Console.Title = "My Rocking App";
+            System.Console.ForegroundColor = System.ConsoleColor.Yellow;
             Console.BackgroundColor = ConsoleColor.Blue;
             Console.WriteLine("*************************************");
             Console.WriteLine("***** Welcome to My Rocking App *****");
@@ -21,7 +17,7 @@ namespace SimpleCSharpConsoleApp
             Console.BackgroundColor = ConsoleColor.Black;
 
             // Wait for Enter key to be pressed.
-            Console.ReadLine();
+            System.Console.ReadLine();
             MessageBox.Show("All done!");
         }
     }

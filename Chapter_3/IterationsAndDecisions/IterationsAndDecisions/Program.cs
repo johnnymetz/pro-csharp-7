@@ -20,7 +20,8 @@ namespace IterationsAndDecisions
       //ExecuteSwitchOnString();
       //SwitchOnEnumExample();
       //ExecutePatternMatchingSwitch();
-      ExecutePatternMatchingSwitchWithWhen();
+      //ExecutePatternMatchingSwitchWithWhen();
+      TestConditionals();
       Console.ReadLine();
     }
 
@@ -140,7 +141,10 @@ namespace IterationsAndDecisions
       Console.Write("Please pick your language preference: ");
 
       string langChoice = Console.ReadLine();
-      int n = int.Parse(langChoice);
+      //int n = int.Parse(langChoice);
+      int n = -1;
+      bool _isValid = int.TryParse(langChoice, out n);
+      Console.WriteLine(n);
 
       switch (n)
       {
@@ -259,7 +263,7 @@ namespace IterationsAndDecisions
           choice = "Hi";
           break;
         case "3":
-          choice = 2.5;
+          choice = 2.5m;
           break;
         default:
           choice = 5;
@@ -300,6 +304,7 @@ static void ExecutePatternMatchingSwitchWithWhen()
       break;
     case int i when i == 1:
     case string s when s.Equals("C#", StringComparison.OrdinalIgnoreCase):
+    case string x when x.Equals("Hello", StringComparison.OrdinalIgnoreCase):
       Console.WriteLine("Good choice, C# is a fine language.");
       break;
     default:

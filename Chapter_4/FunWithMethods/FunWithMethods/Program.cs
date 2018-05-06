@@ -84,16 +84,19 @@ namespace FunWithMethods
             EnterLogData("Oh no! I can't find the payroll data", "CFO");
             Console.WriteLine();
 
-            DisplayFancyMessage(message: "Wow!  Very Fancy indeed!",
+            DisplayFancyMessage(
+                message: "Wow!  Very Fancy indeed!",
                 textColor: ConsoleColor.DarkRed,
                 backgroundColor: ConsoleColor.White);
 
-            DisplayFancyMessage(backgroundColor: ConsoleColor.Green,
+            DisplayFancyMessage(
+                backgroundColor: ConsoleColor.Green,
                 message: "Testing...",
                 textColor: ConsoleColor.DarkBlue);
 
             // This is OK, as positional args are listed before named args.
-            DisplayFancyMessage(ConsoleColor.Blue,
+            DisplayFancyMessage(
+                ConsoleColor.Blue,
                 message: "Testing...",
                 backgroundColor: ConsoleColor.White);
 
@@ -191,8 +194,11 @@ namespace FunWithMethods
             Console.WriteLine("Owner of Error: {0}", owner);
         }
 
-        static void DisplayFancyMessage(ConsoleColor textColor = ConsoleColor.Blue,
-            ConsoleColor backgroundColor = ConsoleColor.White, string message = "Test Message")
+        static void DisplayFancyMessage(
+            ConsoleColor textColor = ConsoleColor.Blue,
+            ConsoleColor backgroundColor = ConsoleColor.White,
+            string message = "Test Message"
+            )
         {
             // Store old colors to restore once message is printed. 
             ConsoleColor oldTextColor = Console.ForegroundColor;

@@ -36,6 +36,10 @@ namespace RefTypeValTypeParams
             Console.WriteLine("Before by ref call, Person is:");
             mel.Display();
 
+            SendAPersonByValue(mel);
+            Console.WriteLine("After value call.");
+            mel.Display();
+
             SendAPersonByReference(ref mel);
             Console.WriteLine("After by ref call, Person is:");
             mel.Display();

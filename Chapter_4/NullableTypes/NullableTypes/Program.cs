@@ -56,6 +56,9 @@ namespace NullableTypes
 
             TesterMethod(null);
 
+            string s = null;
+            Console.WriteLine("Null: {0}", s);
+
             Console.ReadLine();
         }
 
@@ -68,6 +71,7 @@ namespace NullableTypes
             bool? nullableBool = null;
             char? nullableChar = 'a';
             int?[] arrayOfNullableInts = new int?[10];
+            string s = null;
 
             // Error! Strings are reference types!
             // string? s = "oops";

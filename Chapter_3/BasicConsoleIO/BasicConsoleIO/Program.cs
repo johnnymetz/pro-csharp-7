@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace BasicConsoleIO
 {
@@ -11,9 +12,17 @@ namespace BasicConsoleIO
         static void Main(string[] args)
         {
             Console.WriteLine("***** Basic Console I/O *****");
-            GetUserData();
-            FormatNumericalData();
+            //GetUserData();
+            //FormatNumericalData();
+            DisplayMessage();
             Console.ReadLine();
+        }
+
+        static void DisplayMessage()
+        {
+            // Using string.Format() to format a string literal.
+            string userMessage = string.Format("100000 in currency is {0:C}", 100000);
+            MessageBox.Show(userMessage);
         }
 
         #region Get user data

@@ -20,6 +20,7 @@ namespace FunWithTuples
 
             Console.WriteLine("=> Using Named Properties");
             (string FirstLetter, int TheNumber, string SecondLetter) valuesWithNames = ("a", 5, "c");
+            valuesWithNames.FirstLetter = "hello";
             Console.WriteLine($"First item: {valuesWithNames.FirstLetter}");
             Console.WriteLine($"Second item: {valuesWithNames.TheNumber}");
             Console.WriteLine($"Third item: {valuesWithNames.SecondLetter}");
@@ -56,8 +57,8 @@ namespace FunWithTuples
             Console.WriteLine("=> Deconstructing Tuples");
             Point p = new Point(7,5);
             var pointValues = p.Deconstruct();
-            Console.WriteLine($"X is: {pointValues.XPos}");
-            Console.WriteLine($"Y is: {pointValues.YPos}");
+            Console.WriteLine($"X is: {pointValues.XPos} or {pointValues.Item1}");
+            Console.WriteLine($"Y is: {pointValues.YPos} or {pointValues.Item2}");
             Console.WriteLine();
 
 

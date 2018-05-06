@@ -20,6 +20,9 @@ namespace FunWithEnums
         {
             Console.WriteLine("**** Fun with Enums *****\n");
             EmpType e2 = EmpType.Contractor;
+            AskForBonus(e2);
+            Console.WriteLine(typeof(EmpType));
+            Console.WriteLine("emp is a {0}", e2.ToString());
 
             // These types are enums in the System namespace.
             DayOfWeek day = DayOfWeek.Monday;
@@ -69,6 +72,8 @@ namespace FunWithEnums
         static void EvaluateEnum(System.Enum e)
         {
             Console.WriteLine("=> Information about {0}", e.GetType().Name);
+
+            //Console.WriteLine("The current value is: {0}", e);
 
             Console.WriteLine("Underlying storage type: {0}",
                 Enum.GetUnderlyingType(e.GetType()));
