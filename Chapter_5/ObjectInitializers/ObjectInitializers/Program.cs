@@ -14,6 +14,7 @@ namespace ObjectInitializers
 
             // Make a Point by setting each property manually.
             Point firstPoint = new Point();
+			//firstPoint.DisplayStats();
             firstPoint.X = 10;
             firstPoint.Y = 10;
             firstPoint.DisplayStats();
@@ -38,7 +39,7 @@ namespace ObjectInitializers
             Rectangle myRect = new Rectangle
             {
                 TopLeft = new Point { X = 10, Y = 10 },
-                BottomRight = new Point { X = 200, Y = 200 }
+                BottomRight = new Point(150, 150)
             };
             myRect.DisplayStats();
             Console.WriteLine();
