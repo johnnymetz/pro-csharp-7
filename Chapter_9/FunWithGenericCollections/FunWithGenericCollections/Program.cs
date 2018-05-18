@@ -50,17 +50,17 @@ namespace FunWithGenericCollections
         static void Main(string[] args)
         {
             Console.WriteLine("***** Fun with Generic Collections *****\n");
-            UseGenericList();
-            Console.WriteLine();
+            //UseGenericList();
+            //Console.WriteLine();
 
-            UseGenericQueue();
-            Console.WriteLine();
+            //UseGenericQueue();
+            //Console.WriteLine();
 
-            UseGenericStack();
-            Console.WriteLine();
+            //UseGenericStack();
+            //Console.WriteLine();
 
-            UseSortedSet();
-            Console.WriteLine();
+            //UseSortedSet();
+            //Console.WriteLine();
 
             UseDictionary();
             Console.WriteLine();
@@ -99,7 +99,7 @@ namespace FunWithGenericCollections
             Person[] arrayOfPeople = people.ToArray();
             foreach (Person p in arrayOfPeople)
             {
-                Console.WriteLine("First Name: {0}",p.FirstName);
+                Console.WriteLine("First Name: {0}", p.FirstName);
             }
         }
         #endregion

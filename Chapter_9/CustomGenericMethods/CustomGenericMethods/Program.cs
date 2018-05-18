@@ -37,11 +37,34 @@ namespace CustomGenericMethods
             // the method does not take params.
             MyGenericMethods.DisplayBaseClass<int>();
             MyGenericMethods.DisplayBaseClass<string>();
+            Console.WriteLine();
 
             // Compiler error! No params? Must supply placeholder!
             // DisplayBaseClass();
 
+            List<int> nums = new List<int> { 10, 11, 12 };
+            List<string> names = new List<string> { "johnny", "steve", "mike" };
+            List<object> objs = new List<object> { "johnny", 24, true };
+
+            PrintItemsInList<int>(nums);
+            PrintItemsInList<string>(names);
+            PrintItemsInList<object>(objs);
+
             Console.ReadLine();
+        }
+
+        public static void PrintItemsInList<T>(List<T> l)
+        {
+            Console.WriteLine("The list has members of {0}", typeof(T));
+            for (int i = 0; i < l.Count; i++)
+            {
+                Console.WriteLine("{0}. {1}", i+1, l[i]);
+            }
+            //foreach (T item in l)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            Console.WriteLine();
         }
 
         #region Non-Generic swap methods.

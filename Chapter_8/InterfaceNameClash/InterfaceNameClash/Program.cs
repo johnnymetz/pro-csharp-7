@@ -12,6 +12,7 @@ namespace InterfaceNameClash
         {
             Console.WriteLine("***** Fun with Interface Name Clashes *****\n");
             Octagon oct = new Octagon();
+            Console.WriteLine(oct);
 
             // We now must use casting to access the Draw()
             // members.

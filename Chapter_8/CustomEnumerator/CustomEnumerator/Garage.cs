@@ -23,10 +23,10 @@ namespace CustomEnumerator
             carArray[3] = new Car("Fred", 30);
         }
 
-        public IEnumerator GetEnumerator()
-        {
-            // Return the array object's IEnumerator.
-            return carArray.GetEnumerator();
-        }
+        //public IEnumerator GetEnumerator()
+        //{
+        //    // Return the array object's IEnumerator.
+        //    return carArray.GetEnumerator();
+        //}
     }
 }

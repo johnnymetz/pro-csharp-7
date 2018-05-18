@@ -20,9 +20,16 @@ namespace Employees
         {
             Console.WriteLine("***** The Employee Class Hierarchy *****\n");
 
+            //Random r = new Random();
+            //Console.WriteLine(r);
+            //Console.WriteLine(r.Next(500));
+            //SalesPerson m = new SalesPerson();
+            //Console.WriteLine();
+
             // A better bonus system!
             Manager chucky = new Manager("Chucky", 50, 92, 100000, "333-23-2322", 9000);
             chucky.GiveBonus(300);
+            Console.WriteLine(chucky);
             chucky.DisplayStats();
             Console.WriteLine();
 
@@ -47,6 +54,9 @@ namespace Employees
                 Console.WriteLine(ex.Message);
             }
 
+            Console.WriteLine();
+            CastingExamples();
+
             Console.ReadLine();
         }
 
@@ -63,6 +73,7 @@ namespace Employees
             foreach (object item in things)
             {
                 Hexagon h = item as Hexagon;
+                Console.WriteLine(h);
                 if (h == null)
                     Console.WriteLine("Item is not a hexagon");
                 else

@@ -13,6 +13,7 @@ namespace CloneablePoint
             Console.WriteLine("***** Fun with Object Cloning *****\n");
             Console.WriteLine("Cloned p3 and stored new Point in p4");
             Point p3 = new Point(100, 100, "Jane");
+            Console.WriteLine(p3.Clone().GetType());
             Point p4 = (Point)p3.Clone();
 
             Console.WriteLine("Before modification:");

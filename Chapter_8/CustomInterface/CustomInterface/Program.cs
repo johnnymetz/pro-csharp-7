@@ -13,13 +13,18 @@ namespace CustomInterface
             Console.WriteLine("***** Fun with Interfaces *****\n");
 
             // Make an array of Shapes.
-            Shape[] myShapes = { new Hexagon(), new Circle(),
-                        new Triangle("Joe"), new Circle("JoJo")};
+            Shape[] myShapes = {
+                new Hexagon(),
+                new Circle(),
+                new Triangle("Joe"),
+                new Circle("JoJo")
+            };
 
             // Get first pointy item.
             // To be safe, you'd want to check firstPointyItem for null before proceeding.
             IPointy firstPointyItem = FindFirstPointyShape(myShapes);
-            Console.WriteLine("The item has {0} points", firstPointyItem.Points);
+            Console.WriteLine("The first pointy item has {0} points", firstPointyItem.Points);
+            Console.WriteLine();
 
             for (int i = 0; i < myShapes.Length; i++)
             {
@@ -32,11 +37,14 @@ namespace CustomInterface
                     Console.WriteLine("-> Points: {0}", ip.Points);
                 else
                     Console.WriteLine("-> {0}\'s not pointy!", myShapes[i].PetName);
-                Console.WriteLine();
 
                 // Can I draw you in 3D?
-                if (myShapes[i] is IDraw3D)
-                    DrawIn3D((IDraw3D)myShapes[i]);
+                if (myShapes[i] is IDraw3D id3d)
+                    //DrawIn3D((IDraw3D)myShapes[i]);
+                    DrawIn3D(id3d);
+                else
+                    Console.WriteLine("Not derived from the 3d interface.");
+                Console.WriteLine();
 
             }
             Console.ReadLine();

@@ -12,6 +12,12 @@ namespace CustomConversions
         {
             Console.WriteLine("***** Fun with Conversions *****\n");
 
+            int a = 123;
+            long b = a;  // implicit conversion (no loss of data)
+            Console.WriteLine(b);
+            int c = (int)b;  // explicit conversion (potential loss of data)
+            Console.WriteLine(c);
+
             // Make a Rectangle.
             Rectangle r = new Rectangle(15, 4);
             Console.WriteLine(r.ToString());
@@ -44,6 +50,7 @@ namespace CustomConversions
 
             // Attempt to make an implicit cast?
             Rectangle rect2 = s3;
+            Console.WriteLine(rect2);
 
             Console.ReadLine();
         }

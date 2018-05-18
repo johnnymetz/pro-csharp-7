@@ -93,6 +93,9 @@ namespace ObjectOverrides
       Console.WriteLine("p2.ToString() = {0}", p2.ToString());
       Console.WriteLine("p1 = p2?: {0}", p1.Equals(p2));
       Console.WriteLine("Same hash codes?: {0}", p1.GetHashCode() == p2.GetHashCode());
+      Console.WriteLine();
+
+            StaticMembersOfObject();
       Console.ReadLine();
     }
 

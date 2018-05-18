@@ -30,7 +30,7 @@ namespace ICloneableExample
             // Clone whatever we get and print out the name.
             object theClone = c.Clone();
             Console.WriteLine("Your clone is a: {0}",
-              theClone.GetType().Name);
+              theClone.GetType());
         }
     }
 }

@@ -31,6 +31,8 @@ namespace SimpleIndexer
                 Console.WriteLine("Age: {0}", myPeople[i].Age);
                 Console.WriteLine();
             }
+
+            Console.ReadLine();
         }
 
         static void UseGenericListOfPeople()

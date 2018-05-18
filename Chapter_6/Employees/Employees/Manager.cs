@@ -10,10 +10,7 @@ namespace Employees
     class Manager : Employee
     {
         #region constructors 
-        public Manager()
-        {
-
-        }
+        public Manager() {}
 
         public Manager(string fullName, int age, int empID,
                        float currPay, string ssn, int numbOfOpts)
@@ -36,6 +33,11 @@ namespace Employees
         {
             base.DisplayStats();
             Console.WriteLine("Number of Stock Options: {0}", StockOptions);
+        }
+
+        public override string ToString()
+        {
+            return $"This is the Managaer {GetName()}";
         }
     }
 }

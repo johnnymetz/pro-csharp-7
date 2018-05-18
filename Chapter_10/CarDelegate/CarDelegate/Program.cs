@@ -8,7 +8,7 @@ namespace CarDelegate
 {
     class Program
     {
-        static void Main( string[] args )
+        static void Main(string[] args)
         {
             Console.WriteLine("***** Delegates as event enablers *****\n");
 
@@ -40,14 +40,14 @@ namespace CarDelegate
         #region Delegate targets
         // We now have TWO methods that will be called by the Car
         // when sending notifications. 
-        public static void OnCarEngineEvent( string msg )
+        public static void OnCarEngineEvent(string msg)
         {
             Console.WriteLine("\n***** Message From Car Object *****");
             Console.WriteLine("=> {0}", msg);
             Console.WriteLine("***********************************\n");
         }
 
-        public static void OnCarEngineEvent2( string msg )
+        public static void OnCarEngineEvent2(string msg)
         {
             Console.WriteLine("=> {0}", msg.ToUpper());
         }

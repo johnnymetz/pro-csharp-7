@@ -17,8 +17,8 @@ namespace CarDelegate
         private bool carIsDead;
 
         // Class constructors.
-        public Car() {}
-        public Car( string name, int maxSp, int currSp )
+        public Car() { }
+        public Car(string name, int maxSp, int currSp)
         {
             CurrentSpeed = currSp;
             MaxSpeed = maxSp;
@@ -27,13 +27,13 @@ namespace CarDelegate
 
         #region Delegate infrastructure
         // 1) Define a delegate type.
-        public delegate void CarEngineHandler( string msgForCaller );
+        public delegate void CarEngineHandler(string msgForCaller);
 
         // 2) Define a member variable of this delegate.
         private CarEngineHandler listOfHandlers;
 
         // 3) Add registration function for the caller.
-        public void RegisterWithCarEngine( CarEngineHandler methodToCall )
+        public void RegisterWithCarEngine(CarEngineHandler methodToCall)
         {
             // listOfHandlers = methodToCall;
             // listOfHandlers += methodToCall; 
@@ -44,14 +44,14 @@ namespace CarDelegate
                 listOfHandlers = Delegate.Combine(listOfHandlers, methodToCall) as CarEngineHandler;
         }
 
-        public void UnRegisterWithCarEngine( CarEngineHandler methodToCall )
+        public void UnRegisterWithCarEngine(CarEngineHandler methodToCall)
         {
             listOfHandlers -= methodToCall;
         }
 
         // 4) Implement the Accelerate() method to invoke the delegate’s 
         //    invocation list under the correct circumstances.
-        public void Accelerate( int delta )
+        public void Accelerate(int delta)
         {
             // If this car is 'dead', send dead message.
             if (carIsDead)

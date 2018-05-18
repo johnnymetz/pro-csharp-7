@@ -13,7 +13,7 @@ namespace Employees
         private int empID;
         private float currPay;
         private int empAge;
-        private string empSSN = "";
+        private string empSSN;
 
         #region Ctors
         // Note use of constructor chaining.
