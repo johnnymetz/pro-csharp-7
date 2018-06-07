@@ -45,7 +45,6 @@ namespace LinqOverArray
             // Print out the results.
             foreach (string s in subset)
                 Console.WriteLine("Item: {0}", s);
-            ReflectOverQueryResults(subset);
 
         }
 

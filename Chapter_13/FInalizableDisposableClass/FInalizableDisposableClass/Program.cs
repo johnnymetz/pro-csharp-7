@@ -34,6 +34,7 @@ namespace FinalizableDisposableClass
                 if (disposing)
                 {
                     // Dispose managed resources.
+                    Console.WriteLine("Disposed manually.");
                 }
                 // Clean up unmanaged resources here.
             }

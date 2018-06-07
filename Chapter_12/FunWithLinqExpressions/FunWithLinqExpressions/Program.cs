@@ -60,6 +60,9 @@ namespace FunWithLinqExpressions
             GetCountFromQuery();
             Console.WriteLine();
 
+            ReverseEverything(itemsInStock);
+            Console.WriteLine();
+
             DisplayConcat();
             Console.WriteLine();
 
@@ -90,7 +93,7 @@ namespace FunWithLinqExpressions
 
             foreach (var prod in allProducts)
             {
-                Console.WriteLine(prod.ToString());
+                Console.WriteLine(prod);
             }
         }
 
@@ -114,9 +117,10 @@ namespace FunWithLinqExpressions
             // 25 in stock.
             var overstock = from p in products where p.NumberInStock > 25 select p;
 
+            // foreach (var c in overstock)  // polymorphism: program knows the runtime type
             foreach (ProductInfo c in overstock)
             {
-                Console.WriteLine(c.ToString());
+                Console.WriteLine(c);  // don't need ToString()
             }
         }
 
@@ -128,7 +132,7 @@ namespace FunWithLinqExpressions
             foreach (var item in nameDesc)
             {
                 // Could also use Name and Description properties directly.
-                Console.WriteLine(item.ToString());
+                Console.WriteLine(item);
             }
         }
 
@@ -150,7 +154,7 @@ namespace FunWithLinqExpressions
             var allProducts = from p in products select p;
             foreach (var prod in allProducts.Reverse())
             {
-                Console.WriteLine(prod.ToString());
+                Console.WriteLine(prod);
             }
         }
 
@@ -162,7 +166,7 @@ namespace FunWithLinqExpressions
             Console.WriteLine("Ordered by Name:");
             foreach (var p in subset)
             {
-                Console.WriteLine(p.ToString());
+                Console.WriteLine(p);
             }
         }
 

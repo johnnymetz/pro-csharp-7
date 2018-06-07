@@ -16,6 +16,9 @@ namespace LinqUsingEnumerable
             QueryStringsWithEnumerableAndLambdas();
             Console.WriteLine();
 
+            QueryStringsWithEnumerableAndLambdas2();
+            Console.WriteLine();
+
             QueryStringsWithAnonymousMethods();
             Console.WriteLine();
 
@@ -74,6 +77,11 @@ namespace LinqUsingEnumerable
             var orderedGames = gamesWithSpaces.OrderBy(game => game);
             var subset = orderedGames.Select(game => game);
 
+            //Console.WriteLine("Ordered games:");
+            foreach (var game in orderedGames)
+                Console.WriteLine("Item: {0}", game);
+            Console.WriteLine();
+
             foreach (var game in subset)
                 Console.WriteLine("Item: {0}", game);
             Console.WriteLine();
@@ -89,8 +97,8 @@ namespace LinqUsingEnumerable
                 "Fallout 3", "Daxter", "System Shock 2"};
 
             // Build the necessary Func<> delegates using anonymous methods.
-            Func<string, bool> searchFilter =
-                delegate (string game) { return game.Contains(" "); };
+
+            Func<string, bool> searchFilter = delegate (string game) { return game.Contains(" "); };
             Func<string, string> itemToProcess = delegate (string s) { return s; };
 
             // Pass the delegates into the methods of Enumerable.

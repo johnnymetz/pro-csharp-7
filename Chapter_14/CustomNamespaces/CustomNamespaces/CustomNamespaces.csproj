@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{6D0B4625-721C-46FE-9CE4-E3738AFD4D0F}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Chapter14.CoreLogic</RootNamespace>
+    <RootNamespace>MyNames</RootNamespace>
     <AssemblyName>CustomNamespaces</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -42,9 +42,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class2.cs" />
     <Compile Include="My3DShapes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Class1.cs" />
     <Compile Include="ShapesLib.cs" />
   </ItemGroup>
   <ItemGroup>

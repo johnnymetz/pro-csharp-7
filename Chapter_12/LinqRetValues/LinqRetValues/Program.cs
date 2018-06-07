@@ -12,6 +12,12 @@ namespace LinqRetValues
         {
             Console.WriteLine("***** LINQ Return Values *****\n");
             IEnumerable<string> subset = GetStringSubset();
+            Console.WriteLine(subset.GetType());
+            string[] subsetArr = GetStringSubsetAsArray();
+            Console.WriteLine(subsetArr.GetType());
+            List<string> subsetArr2 = GetStringSubsetAsList();
+            Console.WriteLine(subsetArr2.GetType());
+            Console.WriteLine();
 
             foreach (string item in subset)
             {
@@ -20,7 +26,7 @@ namespace LinqRetValues
 
             Console.WriteLine();
 
-            foreach (string item in GetStringSubsetAsArray())
+            foreach (string item in subsetArr)
             {
                 Console.WriteLine(item);
             }
@@ -51,6 +57,18 @@ namespace LinqRetValues
 
             // Map results into an array.
             return theRedColors.ToArray();
+        }
+
+        static List<string> GetStringSubsetAsList()
+        {
+            List<string> colors = new List<string> { "Light Red", "Green", "Yellow", "Dark Red", "Red", "Purple" };
+
+            List<string> theRedColors = (from c in colors
+                where c.Contains("Red")
+                select c).ToList<string>();
+
+            // Map results into an array.
+            return theRedColors;
         }
         #endregion
     }
