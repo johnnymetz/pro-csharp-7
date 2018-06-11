@@ -17,12 +17,7 @@ namespace ObjectContextApp
     {
         public SportsCar()
         {
-            // Get context information and print out context ID.
-            Context ctx = Thread.CurrentContext;
-            Console.WriteLine("{0} object in context {1}",
-              this.ToString(), ctx.ContextID);
-            foreach (IContextProperty itfCtxProp in ctx.ContextProperties)
-                Console.WriteLine("-> Ctx Prop: {0}", itfCtxProp.Name);
+            Helper.PrintContextInfo(this);
         }
     }
 
@@ -33,12 +28,7 @@ namespace ObjectContextApp
     {
         public SportsCarTS()
         {
-            // Get context information and print out context ID.
-            Context ctx = Thread.CurrentContext;
-            Console.WriteLine("{0} object in context {1}",
-              this.ToString(), ctx.ContextID);
-            foreach (IContextProperty itfCtxProp in ctx.ContextProperties)
-                Console.WriteLine("-> Ctx Prop: {0}", itfCtxProp.Name);
+            Helper.PrintContextInfo(this);
         }
     }
     #endregion
@@ -58,6 +48,20 @@ namespace ObjectContextApp
 
             SportsCarTS synchroSport = new SportsCarTS();
             Console.ReadLine();
+        }
+    }
+
+    class Helper
+    {
+        public static void PrintContextInfo(object obj)
+        {
+            // Get context information and print out context ID.
+            Context ctx = Thread.CurrentContext;
+            Console.WriteLine("{0} object in context {1}",
+                obj, ctx.ContextID);
+            Console.WriteLine($"{obj}");
+            foreach (IContextProperty itfCtxProp in ctx.ContextProperties)
+                Console.WriteLine("-> Ctx Prop: {0}", itfCtxProp.Name);
         }
     }
 }

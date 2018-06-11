@@ -12,25 +12,23 @@ namespace LateBindingWithDynamic
         static void Main(string[] args)
         {
             Console.WriteLine("***** Adding with reflection & dynamic keyword *****\n");
-            AddWithReflection();
-            AddWithDynamic();
+            Assembly assembly = Assembly.Load("MathLibrary");
+            Type math = assembly.GetType("MathLibrary.SimpleMath");
+            AddWithReflection(math);
+            AddWithDynamic(math);
             Console.ReadLine();
         }
 
         #region Add with reflection
-        private static void AddWithReflection()
+        private static void AddWithReflection(Type type)
         {
-            Assembly asm = Assembly.Load("MathLibrary");
             try
             {
-                // Get metadata for the SimpleMath type.
-                Type math = asm.GetType("MathLibrary.SimpleMath");
-
                 // Create a SimpleMath on the fly.
-                object obj = Activator.CreateInstance(math);
+                object obj = Activator.CreateInstance(type);
 
                 // Get info for Add.
-                MethodInfo mi = math.GetMethod("Add");
+                MethodInfo mi = type.GetMethod("Add");
 
                 // Invoke method (with parameters).
                 object[] args = { 10, 70 };
@@ -45,17 +43,12 @@ namespace LateBindingWithDynamic
         #endregion
 
         #region Add with dynamic
-        private static void AddWithDynamic()
+        private static void AddWithDynamic(Type type)
         {
-            Assembly asm = Assembly.Load("MathLibrary");
-
             try
             {
-                // Get metadata for the SimpleMath type.
-                Type math = asm.GetType("MathLibrary.SimpleMath");
-
                 // Create a SimpleMath on the fly.
-                dynamic obj = Activator.CreateInstance(math);
+                dynamic obj = Activator.CreateInstance(type);
                 Console.WriteLine("Result is: {0}", obj.Add(10, 70));
             }
             catch (Microsoft.CSharp.RuntimeBinder.RuntimeBinderException ex)

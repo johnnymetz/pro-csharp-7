@@ -27,9 +27,11 @@ namespace VehicleDescriptionAttributeReaderLateBinding
                 // Get type info of VehicleDescriptionAttribute.
                 Type vehicleDesc =
                   asm.GetType("AttributedCarLibrary.VehicleDescriptionAttribute");
+                //Console.WriteLine(vehicleDesc);
 
                 // Get type info of the Description property.
                 PropertyInfo propDesc = vehicleDesc.GetProperty("Description");
+                //Console.WriteLine(propDesc);
 
                 // Get all types in the assembly.
                 Type[] types = asm.GetTypes();

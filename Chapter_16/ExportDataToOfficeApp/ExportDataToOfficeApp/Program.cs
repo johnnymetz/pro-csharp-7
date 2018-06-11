@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using Excel = Microsoft.Office.Interop.Excel;
 
 namespace ExportDataToOfficeApp
@@ -28,6 +27,7 @@ namespace ExportDataToOfficeApp
         {
             // Load up Excel, then make a new empty workbook.
             Excel.Application excelApp = new Excel.Application();
+            //excelApp.Visible = true;  //open now
             excelApp.Workbooks.Add();
 
             // This example uses a single workSheet. 
@@ -48,7 +48,7 @@ namespace ExportDataToOfficeApp
                 workSheet.Cells[row, "C"] = c.PetName;
             }
 
-            // Give our table data a nice look and feel. 
+            // Give our table data a nice look and feel (purple header).
             workSheet.Range["A1"].AutoFormat(Excel.XlRangeAutoFormat.xlRangeAutoFormatClassic2);
 
             // Save the file, quit Excel and display message to user. 

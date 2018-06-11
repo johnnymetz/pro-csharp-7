@@ -32,6 +32,8 @@ namespace ApplyingAttributes
         static void Main(string[] args)
         {
             HorseAndBuggy mule = new HorseAndBuggy();
+
+            Console.Read();
         }
     }
 }
