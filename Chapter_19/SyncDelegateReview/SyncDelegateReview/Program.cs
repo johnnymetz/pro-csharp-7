@@ -20,9 +20,11 @@ namespace SyncDelegateReview
 
             // Invoke Add() in a synchronous manner.
             BinaryOp b = new BinaryOp(Add);
+            //Console.WriteLine("After BinaryOp");
 
             // Could also write b.Invoke(10, 10);
             int answer = b(10, 10);
+            //int answer = Add(10, 20);  // not using delegate
 
             // These lines will not execute until
             // the Add() method has completed.

@@ -12,17 +12,29 @@ namespace FunWithCSharpAsync
         static async Task Main(string[] args)
         {
             Console.WriteLine(" Fun With Async ===>");
-            //This is to prompt Visual Studio to upgrade project to C# 7.1
-            List<int> l = default;
-            //Console.WriteLine(DoWork());
-            string message = await DoWorkAsync();
-            Console.WriteLine(message);
-            await MethodReturningVoidAsync();
-            Console.WriteLine("Void method complete");
-            await MethodReturningVoidAsync();
-            await MethodWithProblems(7, -5);
-            await MethodWithProblemsFixed(7, -5);
-            Console.WriteLine("Completed");
+            ////This is to prompt Visual Studio to upgrade project to C# 7.1
+            //List<int> l = default;
+            ////Console.WriteLine(DoWork());
+            //string message = await DoWorkAsync();
+            //Console.WriteLine(message);
+            //await MethodReturningVoidAsync();
+            //Console.WriteLine("Void method complete");
+            //await MethodReturningVoidAsync();
+            //await MutliAwaits();
+            //string x = await MethodWithTryCatch();
+            //Console.WriteLine(x);
+            //await MethodWithProblems(7, -5);
+            //await MethodWithProblemsFixed(7, -5);
+            //await MethodWithProblemsFixed(7, 5);
+            //Console.WriteLine("Done with og script");
+
+            // messin
+            //CountToN();
+            await CountToNAsync(1);  // synchronous
+            CountToNAsync(2);
+            CountToNAsync(3);
+            Console.WriteLine("Last line in script...");
+
             Console.ReadLine();
         }
 
@@ -83,7 +95,12 @@ namespace FunWithCSharpAsync
 
         private static Task DoMagicCleanUp()
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            return Task.Run(() =>
+            {
+                Console.WriteLine("Long clean up");
+                Thread.Sleep(3_000);
+            });
         }
 
         private static Task LogTheErrors()
@@ -130,10 +147,32 @@ namespace FunWithCSharpAsync
             }
         }
 
-        static async ValueTask<int> ReturnAnInt()
+        static void CountToN(int n = 6)
         {
-            await Task.Delay(1_000);
-            return 5;
+            for (int i = 0; i < n; i++)
+            {
+                Console.WriteLine($"Count: {i}");
+                Thread.Sleep(1000);
+            }
         }
+
+        static async Task CountToNAsync(int x, int n = 6)
+        {
+            // no await means method runs synchronously
+            await Task.Run(() =>
+            {
+                for (int i = 0; i < n; i++)
+                {
+                    Console.WriteLine($"Async Count {x}: {i}");
+                    Thread.Sleep(1000);
+                }
+            });
+        }
+
+        //static async ValueTask<int> ReturnAnInt()
+        //{
+        //    await Task.Delay(1_000);
+        //    return 5;
+        //}
     }
 }

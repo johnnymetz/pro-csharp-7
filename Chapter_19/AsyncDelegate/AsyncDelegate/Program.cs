@@ -23,13 +23,18 @@ namespace AsyncDelegate
 
             // This message will keep printing until
             // the Add() method is finished.
-            while (!ar.IsCompleted)
+            //while (!ar.IsCompleted)
+            //{
+            //    Console.WriteLine("Doing more work in Main()!");
+            //    Thread.Sleep(1000);
+            //}
+            while (!ar.AsyncWaitHandle.WaitOne(1000, true))
             {
-                Console.WriteLine("Doing more work in Main()!");
-                Thread.Sleep(1000);
+                Console.WriteLine("Waiting for the async call to complete...");
             }
 
             // Now we know the Add() method is complete.
+            Console.WriteLine(ar.IsCompleted);
             int answer = b.EndInvoke(ar);
 
             Console.WriteLine("10 + 10 is {0}.", answer);

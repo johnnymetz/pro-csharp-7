@@ -10,8 +10,8 @@ namespace TimerApp
     {
         static void PrintTime(object state)
         {
-            Console.WriteLine("Time is: {0}",
-              DateTime.Now.ToLongTimeString());
+            Console.WriteLine("Time is: {0}, Param is: {1}",
+              DateTime.Now.ToLongTimeString(), state);
         }
 
         static void Main(string[] args)

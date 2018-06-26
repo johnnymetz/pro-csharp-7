@@ -30,6 +30,8 @@ namespace AsyncCallbackDelegate
                 Console.WriteLine("Working....");
             }
 
+            Console.WriteLine("Finally done!");
+
             Console.ReadLine();
         }
 

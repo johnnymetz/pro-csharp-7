@@ -41,10 +41,11 @@ namespace MultiThreadedPrinting
 
             Printer p = new Printer();
 
-            // Make 10 threads that are all pointing to the same
+            // Make n threads that are all pointing to the same
             // method on the same object.
-            Thread[] threads = new Thread[10];
-            for (int i = 0; i < 10; i++)
+            int numberOfThreads = 10;
+            Thread[] threads = new Thread[100];
+            for (int i = 0; i < numberOfThreads; i++)
             {
                 threads[i] = new Thread(new ThreadStart(p.PrintNumbers))
                     {
